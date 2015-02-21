@@ -1,0 +1,33 @@
+table.cmb_metabox input[type="text"], table.cmb_metabox textarea {
+    width: 70%;
+}
+
+.cmb-type-pw_map .map {
+    position:relative;
+    height: 400px;
+	width: 650px;
+	margin-top: 0.6em;
+	border: solid 1px #DFDFDF;
+    padding-bottom: 15px;
+    z-index:10;
+
+}
+
+.pam-admin {
+    position:relative;
+    height: 400px;
+    width: 650px !important;
+    margin-top: 0.6em;
+    border: solid 1px #DFDFDF;
+    padding-bottom: 15px;
+    z-index:10;
+
+}
+
+#map img { max-width:none !important; }
+#map img { max-width:none !important; }
+
+.gmnoprint img { max-width: none !important; }
+.gm-style img { max-width: none !important;}
+.gm-style label { width: auto; display: inline; }
+img {max-width: 100%; height: auto;}

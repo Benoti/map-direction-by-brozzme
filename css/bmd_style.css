@@ -1,0 +1,123 @@
+#map-canvas{
+    height:500px;
+    margin: 10px 0px;
+    width:920px;
+
+}
+
+#map-direction-canvas{
+    height:500px;
+    margin: 10px 0px;
+    width:100%;
+}
+
+#directions-panel {
+    height: 100%;
+    float: left;
+    width: 500px;
+    overflow: auto;
+    margin-left: 5px;
+}
+#panel {
+    position: relative;
+    top: 5px;
+    /*left: 50%;
+    margin-left: -180px;*/
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    width:488px;
+    font-size: 12px;
+    margin-left: 5px;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+#panel option{
+    font-size: 1.1rem;
+    height:24px;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+#panel input:focus, #panel select:focus {
+    outline: 2px solid rgba(51, 51, 51, 0.3);
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+#geo-panel {
+    position: relative;
+    top: 5px;
+    /*left: 50%;
+    margin-left: -180px;*/
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    margin-bottom: 10px;
+    /*border: 1px solid #999;*/
+    max-width:90%;
+}
+
+.warnbox-content {
+
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 420px)
+{
+    #map-canvas{
+        height:280px;
+        margin: 10px 0px;
+    }
+    #map-direction-canvas{
+        height:280px;
+        margin: 10px 0px;
+        width:100%;
+    }
+    #directions-panel {
+        height: 100%;
+        float: left;
+        width: 300px;
+        overflow: auto;
+
+    }
+    .entry-cats {
+        margin-top: 10px;
+        margin-bottom: 4px;
+        line-height: 14px;
+    }
+    #panel {
+        position: relative;
+        top: 5px;
+        /*left: 50%;
+        margin-left: -180px;*/
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        width:280px;
+    }
+}
+
+#map-canvas img { max-width:none !important; }
+#map-direction-canvas img { max-width:none !important; }
+
+.gmnoprint img { max-width: none !important; }
+.gm-style img { max-width: none !important;}
+.gm-style label { width: auto; display: inline; }
+img {max-width: 100%; height: auto;}
+
+.adp, .adp table {
+    color: #2C2C2C;
+    font-family: Roboto,Arial,sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+}
+#out{
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 12px;
+    float:right;
+}
+#out p{
+    border-left:1px solid red;
+    border-right: 1px solid red;
+    padding:0px 5px;
+    min-width:200px;
+    max-width:350px;
+}
