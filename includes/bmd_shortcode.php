@@ -494,8 +494,8 @@ function google_maps_archives($params = array()){
                 $icon_url = $icon_file_url;
             }
             $store_category = custom_taxonomies_terms_links2();
-            //var_dump($store_category);
-            //$ids_array[] = array($category_name, $latitude, $longitude, $icon_url, $post->post_title, get_permalink($post->ID));
+
+
             if($latitude == '' || $longitude == ''){
                 $ids_array[] = array($store_category, $base_latitude, $base_longitude, $icon_url, $post->post_title, get_permalink($post->ID));
             }
@@ -505,8 +505,8 @@ function google_maps_archives($params = array()){
 
         }
     }
-    $ids_array[] = array('', $base_latitude, $base_longitude, plugin_dir_url( BMDPATH ).'images/markers/reperes-hom.png', 'La Villa Flore', 'http://www.happyflore.com/gite-la-villa-flore/');
-    //  var_dump($cats_array);
+    $ids_array[] = array('', $base_latitude, $base_longitude, plugin_dir_url( BMDPATH ).'images/markers/reperes-hom.png', $option['bmd_adresse_title'], $option['bmd_adresse_link']);
+
     $ids_array = json_encode($ids_array);
 
     // retrieve post for this category slug

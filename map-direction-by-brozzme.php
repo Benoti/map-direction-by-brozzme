@@ -55,6 +55,7 @@ function brozzme_map_direction_plugin_activation() {
             'bmd_jquery_loading'=> true,
             'bmd_origine_adresse'=> array('longitude'=>'0.16260520000002998', 'latitude'=>'49.66396659999999', 'completed_adresse'=>'La Villa Flore, 17 Rue Roger Dumont, Saint-Jouin-Bruneval'),
             'bmd_adresse_title'=> 'Map direction by Brozzme',
+            'bmd_adresse_link'=> home_url(),
             'bmd_transport_mode'=>'DRIVING',
             'bmd_single_template'=> 'single.php',
             'bmd_archive_template'=> 'archive.php',
@@ -139,13 +140,7 @@ function brozzme_map_direction_welcome_page(){
     ?>
     <div class="notice"><h3><b>Brozzme Map direction</b> <?php _e('', 'brozzme-map-direction');?></h3>
         <p><?php _e('Available options', 'brozzme-map-direction');?>:
-        <ul><li><b><?php _e('Enable Map Direction with post-types', 'brozzme-map-direction');?></b>: <?php _e('Activation / desactivation (will not erase settings) of the plugin.', 'brozzme-map-direction');?></li>
-            <li><?php _e('Marker icons: set different icons for each marker.  markers icons are included – or you use your own!', 'brozzme-map-direction');?></li>
-            <li><i><?php _e('Super easy to use, no coding required! Create as many map markers as you need by simply typing in the address. Google Maps Directions supported. Define your own width, height and zoom level for your Google Map. Create a map in less than a 30 seconds! WordPress 4.1 friendly, with template file. No advertising or links.', 'brozzme-map-direction');?></i></li>
-            <li><b><?php _e('Jquery loading', 'brozzme-map-direction');?></b>: <?php _e('Insert JavaSscript into the head or footer. Javascript is only need if you choose to include Brozzme Hover globally.', 'brozzme-map-direction');?></li>
-            <li><b><?php _e('Include Brozzme Hover globally', 'brozzme-map-direction');?></b>: <?php _e('add Brozzme Hover classes to elements.', 'brozzme-map-direction');?></li>
-
-            <li><b><?php _e('Enable Map Direction with post-types', 'brozzme-map-direction');?></b>: <?php _e('Choose wich post-types you want to have Map Direction by Brozzme', 'brozzme-map-direction');?></li>
+        <ul><li><b><?php _e('Enable Map Direction with post-types', 'brozzme-map-direction');?></b>: <?php _e('Choose wich post-types you want to have Map Direction by Brozzme', 'brozzme-map-direction');?></li>
             <li><b><?php _e('Enable automatic Map Direction with shortcode', 'brozzme-map-direction');?></b>: <?php _e('Add Map Direction with all shortcodes', 'brozzme-map-direction');?></li>
             <li><b><?php _e('Map Direction starting location', 'brozzme-map-direction');?></b>: <?php _e('Starting point of the map direction service', 'brozzme-map-direction');?></li>
             <li><b><?php _e('Jquery loading', 'brozzme-map-direction');?></b>: <?php _e('Load Jquery in header or footer', 'brozzme-map-direction');?></li>

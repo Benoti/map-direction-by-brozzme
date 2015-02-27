@@ -51,21 +51,28 @@ function brozzme_map_direction_settings_init(  ) {
 
     add_settings_field(
         'bmd_origine_adresse',
-        __( 'Adresse origine', 'brozzme-map_direction' ),
+        __( 'Starting point', 'brozzme-map_direction' ),
         'bmd_origine_adresse_render',
         'brozzmeMapDirectionCss',
         'bmd_brozzmeMapDirection_section'
     );
     add_settings_field(
         'bmd_adresse_title',
-        __( 'Titre du lieu d\'origine', 'brozzme-map_direction' ),
+        __( 'Starting point title', 'brozzme-map_direction' ),
         'bmd_adresse_title_render',
         'brozzmeMapDirectionCss',
         'bmd_brozzmeMapDirection_section'
     );
     add_settings_field(
+        'bmd_adresse_link',
+        __( 'Starting point url', 'brozzme-map_direction' ),
+        'bmd_adresse_url_render',
+        'brozzmeMapDirectionCss',
+        'bmd_brozzmeMapDirection_section'
+    );
+    add_settings_field(
         'bmd_transport_mode',
-        __( 'Mode de transport', 'brozzme-map_direction' ),
+        __( 'Travel mode', 'brozzme-map_direction' ),
         'bmd_transport_mode_render',
         'brozzmeMapDirectionCss',
         'bmd_brozzmeMapDirection_section'
@@ -201,6 +208,15 @@ function bmd_adresse_title_render(  ) {
     $options = get_option( 'b_map_direction_settings' );
     ?>
     <input size="50" type='text' name='b_map_direction_settings[bmd_automatic_style_targets]' value='<?php echo $options['bmd_automatic_style_targets']; ?>'>
+<?php
+
+}
+
+function bmd_adresse_link_render(  ) {
+
+    $options = get_option( 'b_map_direction_settings' );
+    ?>
+    <input size="50" type='text' name='b_map_direction_settings[bmd_adresse_link]' value='<?php echo $options['bmd_adresse_link']; ?>'>
 <?php
 
 }
