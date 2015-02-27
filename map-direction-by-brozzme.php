@@ -57,6 +57,7 @@ function brozzme_map_direction_plugin_activation() {
             'bmd_adresse_title'=> 'Map direction by Brozzme',
             'bmd_adresse_link'=> home_url(),
             'bmd_transport_mode'=>'DRIVING',
+            'bmd_custom_templates'=>'2',
             'bmd_single_template'=> 'single.php',
             'bmd_archive_template'=> 'archive.php',
             'bmd_archive_zoom'=>'12'
@@ -161,12 +162,25 @@ function brozzme_map_direction_welcome_page(){
 function bmd_single_template($single) {
     global $wp_query, $post;
 
+    $option = get_option('b_map_direction_settings');
+    if($option['bmd_custom_templates']== 1){
+
+        if(file_exists(dirname( __FILE__ ) . '/templates/'.$option['bmd_single_template'])){
+            $single = $option['bmd_single_template'];
+        }
+        else{
+            $single = 'single.php';
+        }
+    }
+    else{
+        $single = 'single.php';
+    }
     /* Checks for single template by post type */
     if ($post->post_type == "stores"){
        // if(file_exists(dirname( __FILE__ ) . '/templates/single-stores.php'))
          //   return dirname( __FILE__ )  . '/templates/single-stores.php';
-       if(file_exists(dirname( __FILE__ ) . '/templates/single.php'))
-           return dirname( __FILE__ )  . '/templates/single.php';
+       if(file_exists(dirname( __FILE__ ) . '/templates/'.$single))
+           return dirname( __FILE__ )  . '/templates/'.$single;
 
     }
     return $single;
@@ -174,10 +188,22 @@ function bmd_single_template($single) {
 // archive template
 function bmd_archive_template( $archive_template ) {
     global $post;
+    $option = get_option('b_map_direction_settings');
+    if($option['bmd_custom_templates']== 1){
 
+        if(file_exists(dirname( __FILE__ ) . '/templates/'.$option['bmd_archive_template'])){
+            $archive = $option['bmd_archive_template'];
+        }
+        else{
+            $archive = 'archive.php';
+        }
+    }
+    else{
+        $archive = 'archive.php';
+    }
     if ( is_post_type_archive ( 'stores' ) ) {
        // $archive_template = dirname( __FILE__ ) . '/templates/archive-stores.php';
-        $archive_template = dirname( __FILE__ ) . '/templates/archive.php';
+        $archive_template = dirname( __FILE__ ) . '/templates/'.$archive;
     }
     return $archive_template;
 }

@@ -78,6 +78,13 @@ function brozzme_map_direction_settings_init(  ) {
         'bmd_brozzmeMapDirection_section'
     );
     add_settings_field(
+        'bmd_custom_templates',
+        __( 'Custom templates', 'brozzme-map_direction' ),
+        'bmd_custom_templates_render',
+        'brozzmeMapDirectionCss',
+        'bmd_brozzmeMapDirection_section'
+    );
+    add_settings_field(
         'bmd_single_template',
         __( 'Template for single', 'brozzme-map_direction' ),
         'bmd_single_template_render',
@@ -212,7 +219,7 @@ function bmd_adresse_title_render(  ) {
 
 }
 
-function bmd_adresse_link_render(  ) {
+function bmd_adresse_url_render(  ) {
 
     $options = get_option( 'b_map_direction_settings' );
     ?>
@@ -246,7 +253,18 @@ function bmd_transport_mode_render(  ){
 <?php
 
 }
+function bmd_custom_templates_render(  ){
 
+    $options = get_option( 'b_map_direction_settings' );
+    ?>
+    <select name='b_map_direction_settings[bmd_custom_templates]'>
+        <option value='1' <?php selected( $options['bmd_custom_templates'], 1 ); ?>><?php _e( 'Yes', 'brozzme-map_direction' );?></option>
+        <option value='2' <?php selected( $options['bmd_custom_templates'], 2 ); ?>><?php _e( 'No', 'brozzme-map_direction' );?></option>
+    </select>
+
+<?php
+
+}
 function bmd_single_template_render(){
     $options = get_option( 'b_map_direction_settings' );
     ?>

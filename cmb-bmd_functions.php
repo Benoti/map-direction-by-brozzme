@@ -48,7 +48,7 @@ function cmb_happystore_post_metaboxes( array $meta_boxes ) {
 	 */
 	$meta_boxes['pe_post_map_metabox'] = array(
 		'id'         => 'post_pe_metabox',
-		'title'      => __( 'Carte', 'cmb' ),
+		'title'      => __( 'Map Direction by Brozzme', 'cmb' ),
 		'pages'      => $pages_array, // Post type
 		'context'    => 'normal',
 		'priority'   => 'high',
@@ -58,22 +58,22 @@ function cmb_happystore_post_metaboxes( array $meta_boxes ) {
 
             array(
                 'name' => 'Adresse',
-                'desc' => __('Déplacer le marqueur pour obtenir l\'adresse précise','brozzme-map-direction'),
+                'desc' => __('Move the marker for the precise position','cmb'),
                 'id' => $prefix . 'adresse',
                 'type' => 'pw_map',
                 'sanitization_cb' => 'pw_map_sanitise',
             ),
 
             array(
-                'name'         => __( 'Marqueur', 'brozzme-map-direction' ),
-                'desc'         => __( 'Upload ou ajoutez plusieurs fichiers.', 'brozzme-map-direction' ),
+                'name'         => __( 'Marker', 'cmb' ),
+                'desc'         => __( 'Upload or add file.', 'cmb' ),
                 'id'           => $prefix . 'url_marker',
                 'type'         => 'file_list',
                 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
             ),
             array(
                 'name'    => 'Zoom',
-                'desc'    => 'Select zoom range',
+                'desc'    => __( 'Select zoom range','cmb' ),
                 'id'      => $prefix . 'zoom',
                 'type'    => 'select',
                 'options' => array(
