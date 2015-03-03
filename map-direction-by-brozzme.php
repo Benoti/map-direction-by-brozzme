@@ -34,10 +34,11 @@ require_once( __DIR__ .'/includes/bmd_shortcode.php' );
 
 function brozzme_map_direction_plugin_deactivation(){
     $option_name = 'b_map_direction_settings';
-    delete_option($option_name);
-   // delete_option('brozzme_map_direction_settings');
-}
 
+    delete_option($option_name);
+
+    flush_rewrite_rules();
+}
 
 /**
  * Creates the options
@@ -65,7 +66,9 @@ function brozzme_map_direction_plugin_activation() {
 
         add_option('b_map_direction_settings', $options);
     }
+    flush_rewrite_rules();
 }
+
 
 // add menu for configuration
 
@@ -73,7 +76,7 @@ add_action( 'admin_menu', 'brozzme_map_direction_add_admin_menu' );
 
 function brozzme_map_direction_add_admin_menu(  ) {
 
-    add_options_page('Brozzme Map', __('Brozzme Map Settings', 'brozzme-map'), 'manage_options', 'map-direction-by-brozzme', 'bmd_options_page');
+    add_options_page('Brozzme Map', __('Brozzme Map Settings', 'brozzme-map-direction'), 'manage_options', 'map-direction-by-brozzme', 'bmd_options_page');
 
 }
 
@@ -161,7 +164,7 @@ function brozzme_map_direction_welcome_page(){
 
 function bmd_single_template($single) {
     global $wp_query, $post;
-
+    if ($post->post_type == "stores"){
     $option = get_option('b_map_direction_settings');
     if($option['bmd_custom_templates']== 1){
 
@@ -176,7 +179,7 @@ function bmd_single_template($single) {
         $single = 'single.php';
     }
     /* Checks for single template by post type */
-    if ($post->post_type == "stores"){
+
        // if(file_exists(dirname( __FILE__ ) . '/templates/single-stores.php'))
          //   return dirname( __FILE__ )  . '/templates/single-stores.php';
        if(file_exists(dirname( __FILE__ ) . '/templates/'.$single))
