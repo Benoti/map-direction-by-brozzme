@@ -161,7 +161,7 @@ function brozzme_map_direction_welcome_page(){
 
 function bmd_single_template($single) {
     global $wp_query, $post;
-
+    if ($post->post_type == "stores"){
     $option = get_option('b_map_direction_settings');
     if($option['bmd_custom_templates']== 1){
 
@@ -176,7 +176,7 @@ function bmd_single_template($single) {
         $single = 'single.php';
     }
     /* Checks for single template by post type */
-    if ($post->post_type == "stores"){
+
        // if(file_exists(dirname( __FILE__ ) . '/templates/single-stores.php'))
          //   return dirname( __FILE__ )  . '/templates/single-stores.php';
        if(file_exists(dirname( __FILE__ ) . '/templates/'.$single))

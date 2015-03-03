@@ -35,6 +35,7 @@ function stores_init()
         'show_ui' => true,
         'show_in_menu' => true,
         'menu_name'                  => __('Stores','brozzme-map-direction'),
+        'taxonomies' => array('category'),
         'menu_position'				 => '5',
         'menu_icon' 				 => 'dashicons-id-alt',
         'capability_type' => 'post',
